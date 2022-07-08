@@ -6,6 +6,8 @@ float chargerate_minvalue ;
 float chargerate_maxvalue ;
 float temp_minvalue; 
 float temp_maxvalue ;
+_Bool isChargeRateValid ;
+_Bool isTempValid ;
 
 _Bool CheckChargeRateInRange(float chargeRate)
   {
@@ -32,13 +34,13 @@ _Bool CheckTempInRange(float temperature)
 
 void PrintOnConsole(float temperature, float chargerate)
 {
-    printf("temp-%f,chargerate-%f\n", temperature, chargerate);
+   if((isChargeRateValid == 0) &&(isTempValid == 0))
+      {
+          printf("temp-%f,chargerate-%f\n", temperature, chargerate);
+      }
 }
 void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
-{
-  _Bool isChargeRateValid ;
-  _Bool isTempValid ;
-  
+{ 
   float chargeRate[sensordatalength];
   float temperature[sensordatalength];
   chargerate_minvalue = chargerate_min;
@@ -53,10 +55,7 @@ void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,
   {
       isChargeRateValid = CheckChargeRateInRange(chargeRate[data]);
       isTempValid = CheckTempInRange(temperature[data]);
-      if((isChargeRateValid == 0) &&(isTempValid == 0))
-      {
-          PrintOnConsole(temperature[data], chargeRate[data]);
-      }
+      PrintOnConsole(temperature[data], chargeRate[data]);
   }
   
   
