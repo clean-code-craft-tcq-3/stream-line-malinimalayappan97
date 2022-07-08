@@ -42,6 +42,7 @@ int PrintOnConsole(float temperature, float chargerate)
     {
       retval = 0;
     }
+  return retval;
   
 }
 int main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
