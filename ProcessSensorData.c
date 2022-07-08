@@ -9,7 +9,7 @@ float temp_maxvalue       = 45.0;/*in Farenheit*/
 
 _Bool CheckChargeRateInRange(float chargeRate)
   {
-      if(chargeRate < chargerate_minvalue|| temperature > chargerate_maxvalue)
+      if(chargeRate < chargerate_minvalue|| chargeRate > chargerate_maxvalue)
       {
           return 0;
       }
@@ -43,3 +43,7 @@ _Bool CheckTempInRange(float temperature)
       }
       return temp;
   }
+void PrintOnConsole(float temperature, float chargerate)
+{
+    printf("temp-%f,chargerate-%f\n", temperature, chargerate);
+}
