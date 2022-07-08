@@ -48,8 +48,8 @@ void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,
   temp_minvalue = temp_min; 
   temp_maxvalue = temp_max;
   
-  chargeRate[0] = sensor_chargerate;
-  temperature[0] = sensor_temprature;
+  chargeRate = sensor_chargerate;
+  temperature = sensor_temprature;
   
   for(int data = 0; data < sensordatalength ; data ++)
   {
