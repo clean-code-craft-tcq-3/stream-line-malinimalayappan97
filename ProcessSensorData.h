@@ -6,4 +6,4 @@
 _Bool CheckChargeRateInRange(float chargeRate);
 _Bool CheckTempInRange(float temperature);
 int PrintOnConsole(float temperature, float chargerate);
-int main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max);
+int Main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max);
