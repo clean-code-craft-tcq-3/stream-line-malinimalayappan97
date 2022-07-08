@@ -37,7 +37,7 @@ void PrintOnConsole(float temperature, float chargerate)
           printf("temp-%f,chargerate-%f\n", temperature, chargerate);
       }
 }
-void Main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
+void main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
 { 
   float chargeRate[sensordatalength];
   float temperature[sensordatalength];
