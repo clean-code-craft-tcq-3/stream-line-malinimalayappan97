@@ -5,7 +5,7 @@
 float chargerate_minvalue = 0.79;
 float chargerate_maxvalue = 0.85;
 float temp_minvalue       = 0.0; /*in Farenheit*/
-float temp_manvalue       = 45.0;/*in Farenheit*/
+float temp_maxvalue       = 45.0;/*in Farenheit*/
 
 _Bool CheckChargeRateInRange(float chargeRate)
   {
@@ -20,7 +20,7 @@ _Bool CheckChargeRateInRange(float chargeRate)
   }
 _Bool CheckTempInRange(float temperature)
   {
-      if(temperature < temp_minvalue|| temperature > temp_manvalue)
+      if(temperature < temp_minvalue|| temperature > temp_maxvalue)
       {
           return 0;
       }
