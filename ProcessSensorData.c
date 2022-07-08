@@ -47,3 +47,4 @@ void PrintOnConsole(float temperature, float chargerate)
 {
     printf("temp-%f,chargerate-%f\n", temperature, chargerate);
 }
+
