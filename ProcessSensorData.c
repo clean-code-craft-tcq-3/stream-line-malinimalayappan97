@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <stdbool.h>
 
 float chargerate_minvalue = 0.79;
 float chargerate_maxvalue = 0.85;
