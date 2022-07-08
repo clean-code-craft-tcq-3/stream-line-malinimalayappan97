@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 
 float chargerate_minvalue ;
@@ -39,7 +40,7 @@ void PrintOnConsole(float temperature, float chargerate)
           printf("temp-%f,chargerate-%f\n", temperature, chargerate);
       }
 }
-void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
+void Main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
 { 
   float chargeRate[sensordatalength];
   float temperature[sensordatalength];
@@ -48,8 +49,8 @@ void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,
   temp_minvalue = temp_min; 
   temp_maxvalue = temp_max;
   
-  chargeRate = sensor_chargerate;
-  temperature = sensor_temprature;
+  memcpy(chargeRate,sensor_chargerate,sensordatalength);
+  memcpy(temperature,sensor_temprature,sensordatalength);
   
   for(int data = 0; data < sensordatalength ; data ++)
   {
