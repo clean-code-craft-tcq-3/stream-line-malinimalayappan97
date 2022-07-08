@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include "ProcessSensorData.h"
 
 float chargerate_minvalue ;
 float chargerate_maxvalue ;
