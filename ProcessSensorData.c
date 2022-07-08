@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-float chargerate_minvalue = 0.79;
-float chargerate_maxvalue = 0.85;
-float temp_minvalue       = 0.0; /*in Farenheit*/
-float temp_maxvalue       = 45.0;/*in Farenheit*/
+float chargerate_minvalue ;
+float chargerate_maxvalue ;
+float temp_minvalue; 
+float temp_maxvalue ;
 
 _Bool CheckChargeRateInRange(float chargeRate)
   {
@@ -30,21 +30,35 @@ _Bool CheckTempInRange(float temperature)
       }
   }
 
- float GetTempInFarenheit(float temperature,char tempunit)
-  {
-      float temp;
-      if(tempunit == 'C')
-      {
-          temp = ((temperature * 9/5) + 32);
-      }
-      else
-      {
-          temp = temperature;
-      }
-      return temp;
-  }
 void PrintOnConsole(float temperature, float chargerate)
 {
     printf("temp-%f,chargerate-%f\n", temperature, chargerate);
+}
+void Main(float* sensor_temprature,float*sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
+{
+  _Bool isChargeRateValid ;
+  _Bool isTempValid ;
+  
+  float chargeRate[sensordatalength];
+  float temperature[sensordatalength];
+  chargerate_minvalue = chargerate_min;
+  chargerate_maxvalue = chargerate_max;
+  temp_minvalue = temp_min; 
+  temp_maxvalue = temp_max;
+  
+  chargeRate[0] =&sensor_chargerate;
+  temperature[0] = &sensor_temprature;
+  
+  for(int data = 0; data < sensordatalength ; data ++)
+  {
+      isChargeRateValid = CheckChargeRateInRange(chargeRate[data]);
+      isTempValid = CheckTempInRange(temperature[data]);
+      if((isChargeRateValid == 0) &&(isTempValid == 0))
+      {
+          PrintOnConsole(temperature[data], chargeRate[data]);
+      }
+  }
+  
+  
 }
 
