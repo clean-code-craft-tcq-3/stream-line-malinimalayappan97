@@ -35,6 +35,6 @@ void Main(BMSData_s sensorData_s)
   GetSensorOutput(sensorData_s.chargeRate_minvalue,sensorData_s.chargeRate_maxvalue,chargeRate,sensorData_s.totalNoofValues);
   GetSensorOutput(sensorData_s.temp_minvalue,sensorData_s.temp_maxvalue,temperature,sensorData_s.totalNoofValues);
   
-  PrintOnConsole( &chargeRate[0], &temperature[0],int Range);
+  PrintOnConsole( &chargeRate[0], &temperature[0],sensorData_s.totalNoofValues);
  
 }
