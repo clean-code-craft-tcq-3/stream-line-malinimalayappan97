@@ -1,71 +1,40 @@
-#include "ProcessSensorData.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-float chargerate_minvalue ;
-float chargerate_maxvalue ;
-float temp_minvalue; 
-float temp_maxvalue ;
-_Bool isChargeRateValid ;
-_Bool isTempValid ;
 
-_Bool CheckChargeRateInRange(float chargeRate)
-  {
-      if(chargeRate < chargerate_minvalue|| chargeRate > chargerate_maxvalue)
-      {
-          return 0;
-      }
-      else
-      {
-        return 1;  
-      }
-  }
-_Bool CheckTempInRange(float temperature)
-  {
-      if(temperature < temp_minvalue|| temperature > temp_maxvalue)
-      {
-          return 0;
-      }
-      else
-      {
-        return 1;  
-      }
-  }
+typedef struct{
+int chargeRate_minvalue ;
+int chargeRate_maxvalue ;
+int temp_minvalue; 
+int temp_maxvalue ;
+int totalNoofValues;
+}BMSData_s;
 
-int PrintOnConsole(float temperature, float chargerate)
+void GetSensorOutput(int minValue, int maxValue, int * Array, int Range )
 {
-  int retval;
-   if((isChargeRateValid == 0) &&(isTempValid == 0))
-      {
-          printf("temp-%f,chargerate-%f\n", temperature, chargerate);
-          retval = 1;
-      }
-    else
+    for(int i =0; i < Range; i++)
     {
-      retval = 0;
+        Array[i] = (rand() % (maxValue - minValue+1) + minValue);
     }
-  return retval;
-  
 }
-int Main(float* sensor_temprature,float* sensor_chargerate,int sensordatalength,float temp_min,float temp_max,float chargerate_min,float chargerate_max)
-{ 
-  int retval;
-  float chargeRate[sensordatalength];
-  float temperature[sensordatalength];
-  chargerate_minvalue = chargerate_min;
-  chargerate_maxvalue = chargerate_max;
-  temp_minvalue = temp_min; 
-  temp_maxvalue = temp_max;
 
-  
-  memcpy(chargeRate,sensor_chargerate,sensordatalength);
-  memcpy(temperature,sensor_temprature,sensordatalength);
-  
-  for(int data = 0; data < sensordatalength ; data ++)
+void PrintOnConsole(int * SensorData1 ,int * SensorData2 ,int Range)
+{
+  for(int data = 0; data < Range ; data ++)
   {
-      isChargeRateValid = CheckChargeRateInRange(chargeRate[data]);
-      isTempValid = CheckTempInRange(temperature[data]);
-      retval = PrintOnConsole(temperature[data], chargeRate[data]);
+      printf("%d,%d\n", SensorData1[data], SensorData2[data]);
   }
-  
-  return retval;
 }
 
+void Main(BMSData_s sensorData_s)
+{ 
+  int chargeRate[sensorData_s.totalNoofValues];
+  int temperature[sensorData_s.totalNoofValues];
+
+  GetSensorOutput(sensorData_s.chargeRate_minvalue,sensorData_s.chargeRate_maxvalue,chargeRate,sensorData_s.totalNoofValues);
+  GetSensorOutput(sensorData_s.temp_minvalue,sensorData_s.temp_maxvalue,temperature,sensorData_s.totalNoofValues);
+  
+  PrintOnConsole( &chargeRate[0], &temperature[0],int Range);
+ 
+}
