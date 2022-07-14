@@ -1,15 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
-typedef struct{
-int chargeRate_minvalue ;
-int chargeRate_maxvalue ;
-int temp_minvalue; 
-int temp_maxvalue ;
-int totalNoofValues;
-}BMSData_s;
+#include "Sender.h"
 
 void GetSensorOutput(int minValue, int maxValue, int * Array, int Range )
 {
