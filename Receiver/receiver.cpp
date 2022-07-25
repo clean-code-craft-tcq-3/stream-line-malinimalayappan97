@@ -27,9 +27,9 @@ sensorStatistics compute(sensorData value)
     stats.chargeRateAvg = getAvg(value.chargeRateList, TOTAL_COUNT);
     stats.tempAvg = getAvg(value.temperatureValueList, TOTAL_COUNT);
     stats.minChargeRate = getMinValue(value.chargeRateList);
-    stats.minTemp = getMinimumValue(value.temperatureValueList);
-    stats.maxChargeRate = getMaximumValue(value.chargeRateList);
-    stats.maxTemp = getMaximumValue(value.temperatureValueList);
+    stats.minTemp = getMinValue(value.temperatureValueList);
+    stats.maxChargeRate = getMaxValue(value.chargeRateList);
+    stats.maxTemp = getMaxValue(value.temperatureValueList);
     return stats;
 }
 
