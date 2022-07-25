@@ -38,7 +38,7 @@ class sensorReader: public sensorInterface
             getline(cin, sensorInput);
             for(int sensorValue = 0; sensorValue < 5; sensorValue++)
             {
-	        cin >> data.chargeRateList[sensorValue] >> delimiter >> data.temperatureValueList[temperatureValueList];
+	        cin >> data.chargeRateList[sensorValue] >> delimiter >> data.temperatureValueList[sensorValue];
             }
             return data;
        }
