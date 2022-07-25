@@ -19,9 +19,9 @@ int getMinValue(vector<int> sensorValueList)
 int getMaxValue(vector<int> sensorValueList)
 {
     return *max_element(sensorValueList.begin(),sensorValueList.end());
-}*/
+}
 
-/*sensorStatistics compute(sensorData value)
+sensorStatistics compute(sensorData value)
 {
     sensorStatistics stats;
     stats.chargeRateAvg = getAvg(value.chargeRateList, TOTAL_COUNT);
