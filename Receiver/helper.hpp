@@ -95,5 +95,6 @@ class mockPrinter: public displaySensorData
 	   {
 		   displayCounter++;
 		   cout<<"Sensor Statistics";
+	   }
        }
 };
