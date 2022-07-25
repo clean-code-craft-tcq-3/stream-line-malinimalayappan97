@@ -35,7 +35,7 @@ TEST_CASE("Test functionality to read Sensor data from Console using mock functi
         sensorData mockSensorData;
         mockSensorData.chargeRateList={100,30,20,20,45,25,70,30,90,25};
         mockSensorData.temperatureValueList={60,80,20,30,45,10,70,40,70,50};
-        sensorReader dataReader;
+        mockSensorReader dataReader;
         dataReader.mockSensorData=mockSensorData;
         sensorData receivedSensorData=dataReader.readSensorDataFromConsole();
         REQUIRE(receivedSensorData.chargeRateList==mockSensorData.chargeRateList);
