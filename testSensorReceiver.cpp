@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "test/catch.hpp"
-#include "Receiver/helper.hpp"
+#include "Receiver/receiver.cpp"
 
 TEST_CASE("Test the computation of Simple Moving Average")
 {
