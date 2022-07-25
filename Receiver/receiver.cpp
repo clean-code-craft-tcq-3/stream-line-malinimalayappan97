@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "helper.hpp"
 
-/*float getAvg(vector<int> sensorValueList, int noOfEntries)
+float getAvg(vector<int> sensorValueList, int noOfEntries)
 {
     float total = 0;
     for(int sensorDataItr = TOTAL_COUNT-noOfEntries; sensorDataItr < TOTAL_COUNT; sensorDataItr++)
@@ -43,4 +43,4 @@ sensorStatistics getSensorValueStatis(sensorInterface &dataReader,displaySensorD
     	sensorDataPrinter.displayDataonConsole(sensorDataStats);
     }
     return sensorDataStats;
-}*/
+}
