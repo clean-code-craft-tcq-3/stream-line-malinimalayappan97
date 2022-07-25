@@ -35,10 +35,10 @@ class sensorReader: public sensorInterface
             sensorData data;
     	    string delimiter;
 			std::string sensorInput;
-            getline(cin, sensorData);
+            getline(cin, data);
             for(int sensorValue = 0; sensorValue < 5; sensorValue++)
             {
-	        cin >> sensorData.chargeRateList[sensorValue] >> sensorValue >> sensorData.temperatureValueList[temperatureValueList];
+	        cin >> data.chargeRateList[sensorValue] >> delimiter >> data.temperatureValueList[temperatureValueList];
             }
             return data;
        }
@@ -67,7 +67,7 @@ class mockSensorReader: public sensorInterface
 class displaySensorData
 {
 public:
-     virtual void displayDataonConsole(sensorValueStatistic sensorValue)=0;
+     virtual void displayDataonConsole(sensorStatistics sensorValue)=0;
 };
 
 class sensorValuePrinter: public displaySensorData
@@ -76,7 +76,7 @@ class sensorValuePrinter: public displaySensorData
        void displayDataonConsole(sensorStatistics stats)
        {
 		   cout<<"Average: Charge sensor value="<<to_string(stats.chargeRateAvg)<<"\n";
-    	   cout<<"Average: Temperature sensor value="<<to_string(stats.tempavg);
+    	   cout<<"Average: Temperature sensor value="<<to_string(stats.tempAvg);
     	   cout<<"Charge sensor minimum value="<<to_string(stats.minChargeRate);
     	   cout<<"Temperature sensor minimum value="<<to_string(stats.minTemp);
     	   cout<<"Charge sensor maximum value="<<to_string(stats.maxChargeRate);
@@ -89,7 +89,7 @@ class mockPrinter: public displaySensorData
    public:
        int displayCounter=0;
       
-       void displayDataonConsole(sensorValueStatistic /*sensorValue*/)
+       void displayDataonConsole(sensorStatistics /*sensorValue*/)
        {
 	   for(int counter=0;counter<6;counter++)
 	   {
