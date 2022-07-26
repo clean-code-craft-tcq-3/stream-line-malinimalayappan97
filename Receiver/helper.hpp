@@ -77,13 +77,13 @@ class sensorValuePrinter: public displaySensorData
        {
        	   cout<<endl;
        	   cout<<"*******Sensor Statistics*******"<<endl;
-	   cout<<"\n"<<"Charge sensor average value -"<<to_string(stats.chargeRateAvg)<<endl;
-    	   cout<<"Temperature sensor average value -"<<to_string(stats.tempAvg)<<endl;
-    	   cout<<"Charge sensor minimum value -"<<to_string(stats.minChargeRate)<<endl;
-    	   cout<<"Temperature sensor minimum value -"<<to_string(stats.minTemp)<<endl;
-    	   cout<<"Charge sensor maximum value -"<<to_string(stats.maxChargeRate)<<endl;
-    	   cout<<"Temperature sensor maximum value -"<<to_string(stats.maxTemp)<<endl;
-	   cout<<"*******Sensor Statistics*******"<<endl;
+	   cout<<"\n"<<"Charge sensor average value : "<<to_string(stats.chargeRateAvg)<<endl;
+    	   cout<<"Temperature sensor average value : "<<to_string(stats.tempAvg)<<endl;
+    	   cout<<"Charge sensor minimum value : "<<to_string(stats.minChargeRate)<<endl;
+    	   cout<<"Temperature sensor minimum value : "<<to_string(stats.minTemp)<<endl;
+    	   cout<<"Charge sensor maximum value : "<<to_string(stats.maxChargeRate)<<endl;
+    	   cout<<"Temperature sensor maximum value : "<<to_string(stats.maxTemp)<<endl;
+	   cout<<"\n"<<"*******Sensor Statistics*******"<<endl;
       }
 };
 
