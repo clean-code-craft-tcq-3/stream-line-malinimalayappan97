@@ -4,9 +4,9 @@
 
 TEST_CASE("Test the computation of Simple Moving Average")
 {
-		vector<int> sensorValueList={10,30,20,20,45,25,70,30,70,35};
-		float avg=getAvg(sensorValueList,5);
-        REQUIRE(avg==46.000000);
+	vector<int> sensorValueList={10,30,20,20,45,25,70,30,70,35};
+	float avg=getAvg(sensorValueList,5);
+        REQUIRE(avg==25.000000);
 }
 
 TEST_CASE("Test the computation of minimum value in the sensor data list")
@@ -33,8 +33,8 @@ TEST_CASE("Test the computation of maximum value in the sensor data list")
 TEST_CASE("Test functionality to read Sensor data from Console using mock functionality")
 {
         sensorData mockSensorData;
-        mockSensorData.chargeRateList={100,30,20,20,45,25,70,30,90,25};
-        mockSensorData.temperatureValueList={60,80,20,30,45,10,70,40,70,50};
+        mockSensorData.chargeRateList={100,30,20,20,45};
+        mockSensorData.temperatureValueList={60,80,20,30,45};
         mockSensorReader dataReader;
         dataReader.mockData=mockSensorData;
         sensorData receivedSensorData=dataReader.getSensorDataFromConsole();
@@ -51,8 +51,8 @@ TEST_CASE("Test the Sensor Value Statistics obtained")
         dataReader.mockData=mockSensorValue;
         mockPrinter dataPrinterObject;
         sensorStatistics sensorDataStats=getSensorValueStatis(dataReader,dataPrinterObject); 
-		REQUIRE(sensorDataStats.chargeRateAvg==50.000000);  
-  		REQUIRE(sensorDataStats.tempAvg==52.000000);
+		REQUIRE(sensorDataStats.chargeRateAvg==43.000000);  
+  		REQUIRE(sensorDataStats.tempAvg==47.000000);
 		REQUIRE(sensorDataStats.minChargeRate==20);
     	REQUIRE(sensorDataStats.minTemp==10);
     	REQUIRE(sensorDataStats.maxChargeRate==100);
