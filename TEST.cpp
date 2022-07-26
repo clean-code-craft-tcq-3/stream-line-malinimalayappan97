@@ -2,6 +2,7 @@
 
 #include "test/catch.hpp"
 #include "Sender.h"
+#include "Sender.c"
 
 TEST_CASE("process input sensors value and send to receiver") {
   
