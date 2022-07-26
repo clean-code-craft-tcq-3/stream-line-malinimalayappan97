@@ -58,3 +58,15 @@ TEST_CASE("Test the Sensor Value Statistics obtained")
     	REQUIRE(sensorDataStats.maxChargeRate==100);
     	REQUIRE(sensorDataStats.maxTemp==80);
 }
+
+TEST_CASE("Test to print Sensor Value statistics")
+{
+        sensorData mockSensorValue;
+        mockSensorValue.chargeRateList={100,30,20,20,45};
+        mockSensorValue.temperatureValueList={60,80,20,30,45};
+        mockSensorReader dataReader;
+        dataReader.mockData=mockSensorValue;
+        mockPrinter dataPrinterObject;
+	getSensorValueStatis(dataReader,dataPrinterObject);
+    
+}
