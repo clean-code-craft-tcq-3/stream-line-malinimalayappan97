@@ -62,8 +62,8 @@ TEST_CASE("Test the Sensor Value Statistics obtained")
 TEST_CASE("Test to print Sensor Value statistics")
 {
         sensorData mockSensorValues;
-        mockSensorValue.chargeRateList={100,30,20,20,45};
-        mockSensorValue.temperatureValueList={60,80,20,30,45};
+        mockSensorValues.chargeRateList={100,30,20,20,45};
+        mockSensorValues.temperatureValueList={60,80,20,30,45};
         mockSensorReader sensorReader;
         sensorReader.mockData=mockSensorValues;
         mockPrinter dataPrinter;
