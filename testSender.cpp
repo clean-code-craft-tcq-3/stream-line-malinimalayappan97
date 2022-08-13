@@ -51,7 +51,7 @@ TEST_CASE("considring all values same : test4 - process input sensors value and 
   
   Main(sensorData_s);  
 }
-TEST_CASE("considring all negative values only : test4 - process input sensors value and send to receiver") {
+TEST_CASE("considring all negative values only : test5 - process input sensors value and send to receiver") {
   
   BMSData_s sensorData_s;
 
