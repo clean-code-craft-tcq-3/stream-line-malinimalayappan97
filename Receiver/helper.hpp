@@ -87,16 +87,4 @@ class sensorValuePrinter: public displaySensorData
       }
 };
 
-class mockPrinter: public displaySensorData
-{
-   public:
-       int displayCounter=0;
-      
-       void displayDataonConsole(sensorStatistics /*sensorValue*/)
-       {
-	   for(int counter=0;counter<6;counter++)
-	   {
-		   displayCounter++;
- 	   }
-       }
-};
+
