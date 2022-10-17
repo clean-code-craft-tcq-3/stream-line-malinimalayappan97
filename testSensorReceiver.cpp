@@ -42,23 +42,6 @@ TEST_CASE("Test functionality to read Sensor data from Console using mock functi
         REQUIRE(receivedSensorData.temperatureValueList==mockSensorData.temperatureValueList);
 }
 
-TEST_CASE("Test the Sensor Value Statistics obtained")
-{
-        sensorData mockSensorValue;
-        mockSensorValue.chargeRateList={100,30,20,20,45};
-        mockSensorValue.temperatureValueList={60,80,20,30,45};
-        mockSensorReader dataReader;
-        dataReader.mockData=mockSensorValue;
-        mockPrinter dataPrinterObject;
-        sensorStatistics sensorDataStats=getSensorValueStatis(dataReader,dataPrinterObject); 
-	REQUIRE(sensorDataStats.chargeRateAvg==43.000000);  
-  	REQUIRE(sensorDataStats.tempAvg==47.000000);
-	REQUIRE(sensorDataStats.minChargeRate==20);
-    	REQUIRE(sensorDataStats.minTemp==20);
-    	REQUIRE(sensorDataStats.maxChargeRate==100);
-    	REQUIRE(sensorDataStats.maxTemp==80);
-}
-
 TEST_CASE("Test to print Sensor Value statistics")
 {
         sensorData mockSensorValues;
