@@ -54,11 +54,9 @@ class mockSensorReader: public sensorInterface
        {
             sensorData dataContainer;
             for(int sensorValue= 0; sensorValue< TOTAL_COUNT; sensorValue++)
-            {
-                
-                   dataContainer.chargeRateList.push_back(mockData.chargeRateList[sensorValue]);
-				   dataContainer.temperatureValueList.push_back(mockData.temperatureValueList[sensorValue]);
-                 
+            {              
+                dataContainer.chargeRateList.push_back(mockData.chargeRateList[sensorValue]);
+		dataContainer.temperatureValueList.push_back(mockData.temperatureValueList[sensorValue]);
             }
             return dataContainer;
       }
