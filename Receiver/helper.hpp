@@ -34,7 +34,7 @@ class sensorReader: public sensorInterface
        {
             sensorData data;
     	    string delimiter;
-			std::string sensorInput;
+            std::string sensorInput;
             getline(cin, sensorInput);
             for(int sensorValue = 0; sensorValue < 5; sensorValue++)
             {
